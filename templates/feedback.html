@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Eternity Empire | Оставить отзыв</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" sizes="512x512" href="{{ url_for('static',filename='images/icon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/auth_util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/auth_main.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+        <style>
+                body {
+                background: #0c0c0d;
+                }
+        </style>
+</head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+            <form class="login100-form validate-form flex-sb flex-w" method="post" action="/feedback/sent">
+            <span class="login100-form-title p-b-53">
+            Написать отзыв</span>
+            <div class="p-t-31 p-b-9">
+                <span class="txt1">Выберите оценку (кол-во звезд)</span>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <input class="input100" type="number" name="rate" min="1" max="5" placeholder="Оценка" required>
+                <span class="focus-input100"></span>
+            </div>
+                <div class="p-t-31 p-b-9">
+                <span class="txt1">Напишите отзыв</span>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <input class="input100" type="text" name="feedback" placeholder="Отзыв" required>
+                <span class="focus-input100"></span>
+            </div>
+            <br>
+    <div class="w-full text-center p-t-55">
+        <center>
+            <button class="btn-google m-b-20" type="submit">Отправить</button>
+            <span class="txt2"><a href="/">На главную</a></span><br><br>
+        </center>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

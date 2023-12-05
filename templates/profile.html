@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" sizes="512x512" href="{{ url_for('static',filename='images/icon.png') }}">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Eternity Empire | Личный кабинет</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap-icons.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/slick.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/tooplate-little-fashion.css') }}">
+    </head>
+
+    <body>
+
+        <section class="preloader" style="display: none;">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+
+        <main>
+
+            <nav class="navbar navbar-expand-lg headroom headroom--not-top headroom--pinned headroom--not-bottom">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="/">
+                        <strong><span>Eternity</span> Empire</strong>
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="">
+                                <a class="nav-link" href="/">Главная</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/recomendation">Рекомендации</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/FAQ">FAQ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contacts">Контакты</a>
+                            </li>
+                        </ul>
+                            <div class="d-none d-lg-block active">
+                            <a href="" class="bi-person custom-icon me-3" onclick="already_here();"> {{ name }}</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="about section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-5">Личный кабинет</h2>
+                        </div>
+
+                        <div class="col-lg-10 col-12">
+                            <div class="tab-content mt-2" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                                    <div class="row">
+                                        <div class="col-lg-7 col-12">
+                                            <img src="{{ url_for('static',filename='images/profile.png') }}" class="img-fluid rightpic" width="250" height="250">
+                                        </div>
+
+                                        <div class="col-lg-5 col-12">
+                                            <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                                <h4 class="mb-3">{{ name }} <span> (ID: {{ uid }})</span></h4>
+                                                <p>Возраст: {{ age }}</p>
+                                                <p>Дата рождения (ГГГГ-ММ-ДД): {{ bday }}</p>
+                                                <p>Почта (логин): {{ email }}</p>
+                                                <p>Пароль: {{ password }} (скрыт)</p>
+                                                <p>Пол: {{ gender }}</p>
+                                                <div class="mt-2 mt-lg-auto">
+                                                    <img src="{{ url_for('static',filename='images/key.png') }}" alt="key" width="35" height="35">
+                                                    <a href="/get_key" class="custom-link mb-2">
+                                                        Получить секретный ключ
+                                                        <i class="bi-arrow-right ms-2"></i></a><br><br>
+                                                    <a href="/logout" class="custom-link mb-2">
+                                                        Выйти из аккаунта
+                                                        <i class="bi-arrow-right ms-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3"><a href="/">Eternity</a> Empire</h4>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">© Моисеенко Н. А., 2023 г.  <strong>Eternity Empire</strong></p>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            function already_here(){
+                alert("Вы уже на этой странице!");
+            }
+        </script>
+
+</body></html>
